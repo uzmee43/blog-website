@@ -1,10 +1,12 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { urlFor } from "@/lib/createClient";
 import Image from "next/image";
 import Link from "next/link";
 
 export const RichText = {
   types: {
-    image: ({ value }: any) => {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    image: ({ value }:any ) => {
       return (
         <div className="flex items-center justify-center">
           <Image
@@ -19,10 +21,12 @@ export const RichText = {
     },
   },
   list: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     bullet: ({ children }: any) => (
       <ul className="ml-10 py-5 list-disc space-y-5">{children}</ul>
     ),
   },
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   number: ({ children }: any) => (
     <ol className="mt-lg list-decimal">{children}</ol>
   ),
