@@ -2,6 +2,7 @@ import Link from "next/link";
 import { IoReturnDownBack } from "react-icons/io5";
 import Logo from "./Logo";
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const StudioNavbar = (props: any) => {
   return (
     <div>
