@@ -10,8 +10,8 @@ import { PortableText } from "@portabletext/react";
 import { RichText } from "@/components/RichText";
 
 interface Props {
-  params: {
-    slug: string;
+  params:{
+    slug:string;
   };
 }
 
@@ -30,14 +30,13 @@ export const generateStaticParams = async () => {
   }));
 };
 
-const SlugPage = async ({ params: { slug } }: Props) => {
+const SlugPage = async ({params:{slug}}:Props) => {
   const query = groq`*[_type == 'post' && slug.current == $slug][0]{
-        ...,
-        body,
+           body,
         author->
     }`;
 
-  const post: Post = await client.fetch(query, { slug });
+  const post: Post = await client.fetch(query, {slug});
 
   return (
     <Container className="mb-10">
